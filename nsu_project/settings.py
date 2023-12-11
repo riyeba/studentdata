@@ -113,12 +113,12 @@ WSGI_APPLICATION = 'nsu_project.wsgi.application'
 
 
 
-DATABASES = {
-    # 'default': {
-    #     'ENGINE': 'django.db.backends.sqlite3',
-    #     'NAME': BASE_DIR / 'db.sqlite3',
-    # }
-}
+# DATABASES = {
+#     # 'default': {
+#     #     'ENGINE': 'django.db.backends.sqlite3',
+#     #     'NAME': BASE_DIR / 'db.sqlite3',
+#     # }
+# }
 
 DATABASES = {
     'default': {
@@ -126,7 +126,7 @@ DATABASES = {
         'NAME':"test",
         'USER':"postgres",
         'PASSWORD':"3310",
-        'HOST':"127.0.0.1",
+        'HOST':"localhost",
         'PORT':"5432",
     }
 }
