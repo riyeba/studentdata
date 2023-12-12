@@ -25,13 +25,9 @@ STATIC_URL = 'static/'
 
 
 
+STATICFILES_DIRS = os.path.join(BASE_DIR, 'static'),
 
-# STATICFILES_DIRS = (
-#     os.path.join(BASE_DIR, 'static'),
-# )
-
-STATIC_URL = 'static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build','static')
 
 MEDIA_ROOT =  os.path.join(BASE_DIR,'media')
 MEDIA_URL = '/media/'
@@ -48,11 +44,11 @@ MEDIA_URL = '/media/'
 SECRET_KEY = 'django-insecure-0hd@37u&px3^(@cugjq(uyeuwsigfr+p)u3cqg4v6=k)jn&cof'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['.vercel.app','.now.sh', 'localhost', '127.0.0.1']
 
 # ALLOWED_HOSTS = ['.vercel.app',]
 # Application definition
@@ -127,7 +123,7 @@ DATABASES = {
         'ENGINE':"django.db.backends.postgresql_psycopg2",
         'NAME':"test",
         'USER':"postgres",
-        'PASSWORD':"1234",
+        'PASSWORD':"3310",
         'HOST':"localhost",
         'PORT':"5432",
     }
