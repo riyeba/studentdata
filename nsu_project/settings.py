@@ -25,9 +25,7 @@ STATIC_URL = 'static/'
 
 
 
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'static'),
-)
+STATICFILES_DIRS = os.path.join(BASE_DIR, 'static'),
 
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build','static')
 
@@ -125,7 +123,7 @@ DATABASES = {
         'ENGINE':"django.db.backends.postgresql_psycopg2",
         'NAME':"test",
         'USER':"postgres",
-        'PASSWORD':"3310",
+        'PASSWORD':"1234",
         'HOST':"localhost",
         'PORT':"5432",
     }
