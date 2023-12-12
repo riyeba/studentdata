@@ -25,7 +25,7 @@ STATIC_URL = 'static/'
 
 
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 MEDIA_ROOT =  os.path.join(BASE_DIR,'media')
 MEDIA_URL = '/media/'
@@ -118,7 +118,7 @@ WSGI_APPLICATION = 'nsu_project.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE':"django.db.backends.postgresql_psycopg2",
+        'ENGINE':"django.db.backends.postgresql",
         'NAME':"test",
         'USER':"postgres",
         'PASSWORD':"3310",
