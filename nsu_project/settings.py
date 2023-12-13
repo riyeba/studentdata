@@ -22,9 +22,9 @@ STATIC_URL = 'static/'
 # STATIC_URL = '/staticfiles/'
 # STATICFILES_DIRS = os.path.join(BASE_DIR, 'static'),
 # STATIC_ROOT =os.path.join(BASE_DIR, 'staticfiles_build','static')
-
+STATICFILES_DIRS = os.path.join(BASE_DIR, 'static'),
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static') 
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+
 
 
 MEDIA_ROOT =  os.path.join(BASE_DIR,'media')
@@ -39,8 +39,8 @@ MEDIA_URL = '/media/'
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-# SECRET_KEY = 'django-insecure-0hd@37u&px3^(@cugjq(uyeuwsigfr+p)u3cqg4v6=k)jn&cof'
-SECRET_KEY = 'django-insecure-0hd@37u&px3^(@cugjq(uyeuwsigfr+p)u3cqg4v6=k)jn&cofkkkiyuwrtasvsfs5gssggs7usjsifsvsfsf'
+SECRET_KEY = 'django-insecure-0hd@37u&px3^(@cugjq(uyeuwsigfr+p)u3cqg4v6=k)jn&cof'
+
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
@@ -49,7 +49,7 @@ DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
-# ALLOWED_HOSTS = ['.vercel.app',]
+# ALLOWED_HOSTS = ['.vercel.app',"127.0.0.1"]
 # Application definition
 
 INSTALLED_APPS = [
@@ -64,27 +64,27 @@ INSTALLED_APPS = [
     'corsheaders',
 ]
 
-# MIDDLEWARE = [
-#     'django.middleware.security.SecurityMiddleware',
-#     'django.contrib.sessions.middleware.SessionMiddleware',
-#     'django.middleware.common.CommonMiddleware',
-#     'corsheaders.middleware.CorsMiddleware',
-#     'django.middleware.csrf.CsrfViewMiddleware',
-#     'django.contrib.auth.middleware.AuthenticationMiddleware',
-#     'django.contrib.messages.middleware.MessageMiddleware',
-#     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    
-# ]
-
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    
 ]
+
+# MIDDLEWARE = [
+#     'django.middleware.security.SecurityMiddleware',
+#     'django.contrib.sessions.middleware.SessionMiddleware',
+#     'django.middleware.common.CommonMiddleware',
+#     'django.middleware.csrf.CsrfViewMiddleware',
+#     'django.contrib.auth.middleware.AuthenticationMiddleware',
+#     'django.contrib.messages.middleware.MessageMiddleware',
+#     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+# ]
 
 REST_FRAMEWORK = {
     'DEFAULT_PERMISSION_CLASSES': [
@@ -129,7 +129,7 @@ WSGI_APPLICATION = 'nsu_project.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE':"django.db.backends.postgresql",
+        'ENGINE':"django.db.backends.postgresql_psycopg2",
         'NAME':"test",
         'USER':"postgres",
         'PASSWORD':"3310",
@@ -139,7 +139,7 @@ DATABASES = {
 }
 
 
-# DEVELOPMENT_MODE = os.getenv("DEVELOPMENT_MODE", "False") == "True"
+DEVELOPMENT_MODE = os.getenv("DEVELOPMENT_MODE", "False") == "True"
 
 
 
@@ -162,13 +162,13 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
-SECURE_CONTENT_TYPE_NOSNIFF = True
-SECURE_HSTS_SECONDS = 31536000
-SESSION_COOKIE_SECURE=True
-SECURE_HSTS_PRELOAD=True
-CSRF_COOKIE_SECURE=True
-SECURE_SSL_REDIRECT=True
-SECURE_HSTS_INCLUDE_SUBDOMAINS=True
+# SECURE_CONTENT_TYPE_NOSNIFF = True
+# SECURE_HSTS_SECONDS = 31536000
+# SESSION_COOKIE_SECURE=True
+# SECURE_HSTS_PRELOAD=True
+# CSRF_COOKIE_SECURE=True
+# SECURE_SSL_REDIRECT=True
+# SECURE_HSTS_INCLUDE_SUBDOMAINS=True
 # Internationalization
 
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
@@ -192,4 +192,14 @@ USE_TZ = True
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+
+# CORS_REPLACE_HTTPS_REFERER      = True
+# HOST_SCHEME                     = "http://"
+# SECURE_PROXY_SSL_HEADER         = None
+# SECURE_SSL_REDIRECT             = False
+# SESSION_COOKIE_SECURE           = False
+# CSRF_COOKIE_SECURE              = False
+# SECURE_HSTS_SECONDS             = None
+# SECURE_HSTS_INCLUDE_SUBDOMAINS  = False
+# SECURE_FRAME_DENY               = False
 
