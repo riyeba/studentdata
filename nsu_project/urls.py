@@ -21,6 +21,7 @@ from rest_framework.urlpatterns import  format_suffix_patterns
 from django.conf import settings
 from django.conf.urls.static import static
 from django.views.generic.base import RedirectView
+from django.conf.urls import url
 
 
 
@@ -34,6 +35,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('info/', (views.info_list)),
     path('info/<int:id>', (views.info_detail)),
+    url(r'^favicon\.ico$',RedirectView.as_view(url='/static/images/favicon.ico')),
     
    
 ]
