@@ -18,15 +18,8 @@ import os
 # STATIC_URL = 'static/'
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-STATIC_URL = '/static/'
-# STATIC_URL = '/staticfiles/'
-# STATICFILES_DIRS = os.path.join(BASE_DIR, 'static'),
-# STATIC_ROOT =os.path.join(BASE_DIR, 'staticfiles_build','static')
-STATICFILES_DIRS = os.path.join(BASE_DIR, 'static'),
+STATIC_URL = 'static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles_build', 'static') 
-
-
-
 MEDIA_ROOT =  os.path.join(BASE_DIR,'media')
 MEDIA_URL = '/media/'
 
@@ -43,13 +36,13 @@ SECRET_KEY = 'django-insecure-0hd@37u&px3^(@cugjq(uyeuwsigfr+p)u3cqg4v6=k)jn&cof
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 
 
 ALLOWED_HOSTS = ['*']
 
-# ALLOWED_HOSTS = ['.vercel.app',"127.0.0.1"]
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -127,16 +120,28 @@ WSGI_APPLICATION = 'nsu_project.wsgi.application'
 #     # }
 # }
 
-DATABASES = {
-    'default': {
-        'ENGINE':"django.db.backends.postgresql",
-        'NAME':"test",
-        'USER':"postgres",
-        'PASSWORD':"3310",
-        'HOST':"localhost",
-        'PORT':"5432",
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE':"django.db.backends.postgresql",
+#         'NAME':"test",
+#         'USER':"postgres",
+#         'PASSWORD':"3310",
+#         'HOST':"localhost",
+#         'PORT':"5432",
+#     }
+# }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'test',
+#         'USER': 'postgres',
+#         'PASSWORD': '3310',
+#         'HOST': 'myrdshost.rds.amazonaws.com',
+#         'PORT': '5432',
+#     }
+# }
+
 
 
 # DEVELOPMENT_MODE = os.getenv("DEVELOPMENT_MODE", "False") == "True"
@@ -162,14 +167,6 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
-# SECURE_CONTENT_TYPE_NOSNIFF = True
-# SECURE_HSTS_SECONDS = 31536000
-# SESSION_COOKIE_SECURE=True
-# SECURE_HSTS_PRELOAD=True
-# CSRF_COOKIE_SECURE=True
-# SECURE_SSL_REDIRECT=True
-# SECURE_HSTS_INCLUDE_SUBDOMAINS=True
-# Internationalization
 
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
 
@@ -193,13 +190,23 @@ USE_TZ = True
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-# CORS_REPLACE_HTTPS_REFERER      = True
-# HOST_SCHEME                     = "http://"
-# SECURE_PROXY_SSL_HEADER         = None
-# SECURE_SSL_REDIRECT             = False
-# SESSION_COOKIE_SECURE           = False
-# CSRF_COOKIE_SECURE              = False
-# SECURE_HSTS_SECONDS             = None
-# SECURE_HSTS_INCLUDE_SUBDOMAINS  = False
-# SECURE_FRAME_DENY               = False
 
+
+EMAIL_BACKEND ='django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+# EMAIL_HOST_USER = 'Your Email'
+# EMAIL_HOST_PASSWORD = 'Your Password'
+EMAIL_USE_TLS = True
+EMAIL_USE_SSL = False
+
+
+AWS_ACCESS_KEY_ID = 'AWS_ACCESS_KEY_ID '
+AWS_SECRET_ACCESS_KEY = 'AWS_SECRET_ACCESS_KEY'
+AWS_STORAGE_BUCKET_NAME = 'AWS_STORAGE_BUCKET_NAME'
+AWS_S3_SIGNATURE_NAME = 's3v4',
+AWS_S3_REGION_NAME = 'AWS_S3_REGION_NAME'
+AWS_S3_FILE_OVERWRITE = False
+AWS_DEFAULT_ACL =  None
+AWS_S3_VERITY = True
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
