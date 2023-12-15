@@ -1,4 +1,5 @@
 {
+  "version": 2,
   "builds": [
     {
       "src": "nsu_project/wsgi.py",
