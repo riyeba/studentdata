@@ -106,6 +106,7 @@ TEMPLATES = [
     },
 ]
 
+
 WSGI_APPLICATION = 'nsu_project.wsgi.application'
 
 # WSGI_APPLICATION = 'nsu_project.wsgi.application'
@@ -120,16 +121,7 @@ WSGI_APPLICATION = 'nsu_project.wsgi.application'
 #     # }
 # }
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE':"django.db.backends.postgresql",
-#         'NAME':"test",
-#         'USER':"postgres",
-#         'PASSWORD':"3310",
-#         'HOST':"localhost",
-#         'PORT':"5432",
-#     }
-# }
+
 
 DATABASES = {
     'default': {
