@@ -120,9 +120,20 @@ WSGI_APPLICATION = 'nsu_project.wsgi.application'
 #     # }
 # }
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE':"django.db.backends.postgresql",
+#         'NAME':"test",
+#         'USER':"postgres",
+#         'PASSWORD':"3310",
+#         'HOST':"localhost",
+#         'PORT':"5432",
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE':"django.db.backends.postgresql",
+        'ENGINE':"django.db.backends.postgresql_psycopg2",
         'NAME':"test",
         'USER':"postgres",
         'PASSWORD':"3310",
@@ -130,18 +141,6 @@ DATABASES = {
         'PORT':"5432",
     }
 }
-
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'test',
-#         'USER': 'postgres',
-#         'PASSWORD': '3310',
-#         'HOST': 'myrdshost.rds.amazonaws.com',
-#         'PORT': '5432',
-#     }
-# }
-
 
 
 # DEVELOPMENT_MODE = os.getenv("DEVELOPMENT_MODE", "False") == "True"
