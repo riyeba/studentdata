@@ -125,7 +125,7 @@ WSGI_APPLICATION = 'nsu_project.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE':"django.db.backends.postgresql",
-        'NAME':"dbtest",
+        'NAME':"test",
         'USER':"postgres",
         'PASSWORD':"12345",
         'HOST':"localhost",
