@@ -79,11 +79,11 @@ MIDDLEWARE = [
 #     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 # ]
 
-REST_FRAMEWORK = {
-    'DEFAULT_PERMISSION_CLASSES': [
-   'rest_framework.permissions.AllowAny',
-]
-}
+# REST_FRAMEWORK = {
+#     'DEFAULT_PERMISSION_CLASSES': [
+#    'rest_framework.permissions.AllowAny',
+# ]
+# }
 
 ROOT_URLCONF = 'nsu_project.urls'
 
@@ -125,7 +125,7 @@ WSGI_APPLICATION = 'nsu_project.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE':"django.db.backends.postgresql",
-        'NAME':"test",
+        'NAME':"dbtest",
         'USER':"postgres",
         'PASSWORD':"12345",
         'HOST':"localhost",
