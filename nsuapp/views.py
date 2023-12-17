@@ -13,6 +13,8 @@ from django.http import HttpResponse
 
 # Create your views here.
 
+
+
 @api_view(['GET', 'POST'])
 @permission_classes([AllowAny,])
 def info_list(request, format=None):
@@ -60,7 +62,3 @@ def info_detail(request,id,format=None):
         return Response(status=status.HTTP_204_NO_CONTENT)
    
 
-# def destroy(self, request, *args, **kwargs):
-#     instance = self.get_object(Info)
-#     self.perform_destroy(instance)
-#     return Response(status=status.HTTP_204_NO_CONTENT)

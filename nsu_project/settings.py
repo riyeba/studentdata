@@ -12,7 +12,9 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 
 from pathlib import Path
 import os
+from dotenv import load_dotenv
 
+load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 # STATIC_URL = 'static/'
@@ -40,7 +42,7 @@ DEBUG = True
 
 
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['127.0.0.1', '.vercel.app']
 
 
 # Application definition
@@ -69,15 +71,7 @@ MIDDLEWARE = [
     
 ]
 
-# MIDDLEWARE = [
-#     'django.middleware.security.SecurityMiddleware',
-#     'django.contrib.sessions.middleware.SessionMiddleware',
-#     'django.middleware.common.CommonMiddleware',
-#     'django.middleware.csrf.CsrfViewMiddleware',
-#     'django.contrib.auth.middleware.AuthenticationMiddleware',
-#     'django.contrib.messages.middleware.MessageMiddleware',
-#     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-# ]
+
 
 # REST_FRAMEWORK = {
 #     'DEFAULT_PERMISSION_CLASSES': [
@@ -122,27 +116,28 @@ WSGI_APPLICATION = 'nsu_project.wsgi.application'
 
 
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE':"django.db.backends.postgresql",
+#         'NAME':"dbtest",
+#         'USER':"postgres",
+#         'PASSWORD':"12345",
+#         'HOST':"localhost",
+#         'PORT':"5432",
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE':"django.db.backends.postgresql",
-        'NAME':"dbtest",
-        'USER':"postgres",
-        'PASSWORD':"12345",
-        'HOST':"localhost",
-        'PORT':"5432",
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': os.getenv('POSTGRES_DATABASE'),
+        'USER': os.getenv('POSTGRES_USER'),
+        'PASSWORD': os.getenv('POSTGRES_PASSWORD'),
+        'HOST': os.getenv('POSTGRES_HOST'),
+        'PORT': os.getenv('POSTGRES_DB_PORT'),
     }
 }
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'test',
-#         'USER': 'postgres',
-#         'PASSWORD': '3310',
-#         'HOST': 'myrdshost.rds.amazonaws.com',
-#         'PORT': '5432',
-#     }
-# }
 
 
 
